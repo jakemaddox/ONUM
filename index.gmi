@@ -12,7 +12,7 @@ This variable axis is intended to replace the onum and lnum OpenType features.
 ## Conventions
 
 * ONUM=0, the minimum value, represents lining figures.
-* ONUM=1, the maximum value, represents old-style figures at the x-height of the typeface.
+* ONUM=1, the maximum value, represents old-style figures, with non-ascending numerals typically at the x-height of the typeface.
 
 ## CSS
 
