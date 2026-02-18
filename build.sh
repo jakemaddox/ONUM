@@ -4,7 +4,7 @@ echo '<html>'
 cat head.html
 echo '<body>'
 
-while IFS = read -r line; do
+while IFS= read -r line; do
 	case "$line" in
 		"### "*) echo -n "$line" | sed 's/## /<h3>/g' ; echo "</h3>" ;;
 		"## "*) echo -n "$line" | sed 's/## /<h2>/g' ; echo "</h2>" ;;
