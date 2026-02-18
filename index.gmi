@@ -7,7 +7,7 @@ Written by Jake Maddox
 
 The ONUM variable axis is used for interpolation between lining and old-style figures, allowing users to choose any height they desire for old-style figures. This level of control was previously only available to the type designer.
 
-This variable axis is intended to replace the 𝚘𝚗𝚞𝚖 and 𝚕𝚗𝚞𝚖 OpenType features.
+This variable axis is intended to replace the onum and lnum OpenType features.
 
 ## Conventions
 
