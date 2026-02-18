@@ -49,7 +49,7 @@ while IFS= read -r line; do
     echo "</li>"
     ;;
   *)
-    if [ "$code"=="0" ]; then
+    if [ $code==0 ]; then
       echo "$line"
     else
       echo "$line"
