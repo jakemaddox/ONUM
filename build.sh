@@ -49,7 +49,7 @@ while IFS= read -r line; do
     echo "</li>"
     ;;
   *)
-    if [[ code==1 ]]; then
+    if [ "$code"=="0" ]; then
       echo "$line"
     else
       echo "<p>$line</p>"
@@ -58,5 +58,6 @@ while IFS= read -r line; do
   esac
 done <index.gmi
 
+echo 'This site is set in a customized version of Cantarell v0.100. Feel free to play with the ONUM axis using developer tools.'
 echo '</body>'
 echo '</html>'
