@@ -4,6 +4,6 @@
   src: url('./Cantarell-VF.woff2'), format('woff2');
 }
 
-root {
+:root {
   font-family: Cantarell;
 }
