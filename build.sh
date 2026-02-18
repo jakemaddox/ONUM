@@ -52,6 +52,6 @@ while IFS= read -r line; do
   esac
 done <index.gmi
 
-echo '<br><br><br><span style="font-size: 75%">This site is set in a customized version of Cantarell v0.100. Feel free to play with the ONUM axis using developer tools.</span>'
+echo '<br><br><span style="font-size: 75%">This site is set in a customized version of Cantarell v0.100. Feel free to play with the ONUM axis using developer tools.</span>'
 echo '</body>'
 echo '</html>'
