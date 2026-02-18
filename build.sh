@@ -12,7 +12,7 @@ code=0
 while IFS= read -r line; do
   echo "$line" >/tmp/line
 
-  sed -i 's/ONUM/<code>ONUM<\/code>/' /tmp/line
+  # sed -i 's/ONUM/<code>ONUM<\/code>/' /tmp/line
   sed -i 's/onum/<code>onum<\/code>/' /tmp/line
   sed -i 's/lnum/<code>lnum<\/code>/' /tmp/line
 
