@@ -16,7 +16,7 @@ while IFS= read -r line; do
   sed -i 's/onum/<code>onum</code>/' /tmp/line
   sed -i 's/lnum/<code>lnum</code>/' /tmp/line
 
-  line=$(echo /tmp/line)
+  line=$(cat /tmp/line)
 
   case "$line" in
   "### "*)
