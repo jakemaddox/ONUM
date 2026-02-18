@@ -1,7 +1,7 @@
 # The ONUM Variable Axis
 
 Written by Jake Maddox
-=> releases.tsv	Version 1.00
+=> releases.tsv	Version 1.01
 
 ## Introduction
 
