@@ -8,6 +8,7 @@ echo '<!DOCTYPE html>'
 echo '<html>'
 cat head.html
 echo '<body>'
+
 code=0
 
 while IFS= read -r line; do
@@ -57,7 +58,13 @@ while IFS= read -r line; do
     echo -n "$line" | sed 's/* /<li>/'
     echo "</li>"
     ;;
-  *) echo "$line" ;;
+  *)
+    if [ -z "$line" ] || [ $code -eq 1 ]; then
+      echo "$line"
+    else
+      echo "<p>$line</p>"
+    fi
+    ;;
   esac
 done <index.gmi
 
