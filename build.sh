@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 cp Cantarell-VF.woff2 _site/
 cp cantarell.css _site/
