@@ -27,7 +27,7 @@ Using the ONUM axis, here is the new code:
 
 ```code
 font-variation-settings: "ONUM" 0; /* lining figures */
-font-variation-settings: "ONUM" 1; /* x-height old-style figures */
+font-variation-settings: "ONUM" 1; /* old-style figures */
 ```
 
 The advantage of the ONUM axis is that it is also possible to go between 0 and 1. Here is an example:
