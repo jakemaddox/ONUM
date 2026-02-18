@@ -48,13 +48,7 @@ while IFS= read -r line; do
     echo -n "$line" | sed 's/* /<li>/'
     echo "</li>"
     ;;
-  *)
-    if [ $code==0 ]; then
-      echo "$line"
-    else
-      echo "$line"
-    fi
-    ;;
+  *) echo "$line" ;;
   esac
 done <index.gmi
 
