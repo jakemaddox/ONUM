@@ -16,14 +16,14 @@ This variable axis is intended to replace the 𝚘𝚗𝚞𝚖 and 𝚕𝚗𝚞�
 
 ## CSS
 
-Traditionally, this CSS was used to choose between lining and old-style figures:
+Traditionally, this CSS code was used to choose between lining and old-style figures:
 
 ```code
 font-variant-numeric: lining-nums;
 font-variant-numeric: oldstyle-nums;
 ```
 
-Using the ONUM axis, the code becomes
+Using the ONUM axis, here is the new code:
 
 ```code
 font-variation-settings: "ONUM" 0; /* lining figures */
