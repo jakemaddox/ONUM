@@ -2,6 +2,7 @@
 
 cp Cantarell-VF.woff2 _site/
 cp cantarell.css _site/
+cp releases.tsv _site/
 
 echo '<!DOCTYPE html>'
 echo '<html>'
