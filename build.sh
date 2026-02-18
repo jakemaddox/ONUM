@@ -52,7 +52,7 @@ while IFS= read -r line; do
     if [ "$code"=="0" ]; then
       echo "$line"
     else
-      echo "<p>$line</p>"
+      echo "$line"
     fi
     ;;
   esac
