@@ -75,7 +75,12 @@ echo '</body>'
 echo '</html>'
 
 releases() {
-  echo '<table>'
+  echo '<!DOCTYPE html>'
+  echo '<html>'
+  cat head.html
+  echo '<body>'
+
+  echo '<table align="center">'
   lines=0
   while IFS= read -r line; do
     echo -e "\t<tr>"
@@ -86,6 +91,8 @@ releases() {
     lines=$((lines + 1))
   done <releases.tsv
   echo '</table>'
+
+  echo -e "</body>\n</html>"
 }
 
 releases >_site/releases.html
