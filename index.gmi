@@ -1,0 +1,37 @@
+# The ONUM Variable Axis
+
+Written by Jake Maddox
+=> releases.tsv Version 1.00
+
+## Introduction
+
+The ONUM variable axis is used for interpolation between lining and old-style figures, allowing for users to choose any height they desire for old-style figures. This level of control was previously only available to the type designer.
+
+This variable axis is designed to replace the 𝚘𝚗𝚞𝚖 and 𝚕𝚗𝚞𝚖 OpenType features.
+
+## Conventions
+
+* ONUM=0, the minimum value, represents lining figures.
+* ONUM=1, the maximum value, represents old-style figures at x-height.
+
+## CSS
+
+Traditionally, this CSS was used to choose between lining and old-style figures:
+
+```code
+font-variant-numeric: lining-nums;
+font-variant-numeric: oldstyle-nums;
+```
+
+Using the ONUM axis, the code becomes
+
+```code
+font-variation-settings: "ONUM" 0; /* lining figures */
+font-variation-settings: "ONUM" 1; /* x-height old-style figures */
+```
+
+The advantage of the ONUM axis is that it is also possible to go between 0 and 1. An example:
+
+```code
+font-variation-settings: "ONUM" 0.5;
+```
