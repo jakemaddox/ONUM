@@ -10,9 +10,13 @@ echo '<body>'
 code=0
 
 while IFS= read -r line; do
-  line=$(echo "$line" | sed 's/ONUM/<code>ONUM</code>/')
-  line=$(echo "$line" | sed 's/onum/<code>onum</code>/')
-  line=$(echo "$line" | sed 's/lnum/<code>lnum</code>/')
+  echo $line >/tmp/line
+
+  sed -i 's/ONUM/<code>ONUM</code>/' /tmp/line
+  sed -i 's/onum/<code>onum</code>/' /tmp/line
+  sed -i 's/lnum/<code>lnum</code>/' /tmp/line
+
+  line=$(echo /tmp/line)
 
   case "$line" in
   "### "*)
