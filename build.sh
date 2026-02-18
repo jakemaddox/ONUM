@@ -4,6 +4,8 @@ echo '<html>'
 cat head.html
 echo '<body>'
 
+mkdir _site
+
 while IFS=read -r line; do
 	case $line in
 		"### "*) echo -n "$line" | sed 's/## /<h3>/g' ; echo "</h3>" ;;
@@ -14,7 +16,7 @@ while IFS=read -r line; do
 		"=> "*) echo -n echo -n $line | sed 's/=> /<a href="/' | sed 's/\t/">/'; echo "</a></span>" ;;
 		*) [-z $line] && echo $line || echo "<p>$line</p>"
 	esac
-done < index.gmi > index.html
+done < index.gmi > _site/index.html
 
 echo '</body>'
 echo '</html>'
