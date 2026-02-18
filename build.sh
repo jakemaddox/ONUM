@@ -5,7 +5,7 @@ cat head.html
 echo '<body>'
 
 while IFS = read -r line; do
-	case $line in
+	case "$line" in
 		"### "*) echo -n "$line" | sed 's/## /<h3>/g' ; echo "</h3>" ;;
 		"## "*) echo -n "$line" | sed 's/## /<h2>/g' ; echo "</h2>" ;;
 		"# "*) echo -n "$line" | sed 's/## /<h1>/g' ; echo "</h1>" ;;
