@@ -2,7 +2,7 @@
 
 cp Cantarell-VF.woff2 _site/
 cp cantarell.css _site/
-cp releases.tsv _site/
+# cp releases.tsv _site/
 
 echo '<!DOCTYPE html>'
 echo '<html>'
@@ -17,6 +17,7 @@ while IFS= read -r line; do
   # sed -i 's/ONUM/<code>ONUM<\/code>/' /tmp/line
   sed -i 's/onum/<code>onum<\/code>/' /tmp/line
   sed -i 's/lnum/<code>lnum<\/code>/' /tmp/line
+  sed -i 's/.tsv/.html/' /tmp/line
 
   line=$(cat /tmp/line)
 
@@ -38,7 +39,7 @@ while IFS= read -r line; do
     echo -n "$line"
     echo "</span>"
     ;;
-  "=> releases.tsv"*)
+  "=> releases"*)
     echo -n "<span class=\"info\">$line" | sed 's/=> /<a href="/' | sed 's/\t/">/'
     echo "</span></a>"
     ;;
@@ -69,5 +70,20 @@ while IFS= read -r line; do
 done <index.gmi
 
 echo '<br><br><span style="font-size: 75%">This site is set in a customized version of Cantarell v0.100. Feel free to play with the ONUM axis using developer tools.</span>'
+
 echo '</body>'
 echo '</html>'
+
+releases() {
+  echo '<table>'
+  lines=0
+  while IFS= read -r line; do
+    echo -e "\t<tr>"
+    test $lines -eq 0 && echo -e '\t\t' && echo "<th>$line</th>" | sed -e 's/\t/<\/th>\n<th>/g' ||
+      echo -e "\t\t" && echo "<td>$line</td>" | sed -e 's/\t/<\/td>\n<td>/g'
+    lines=$((lines + 1))
+  done <releases.tsv
+  echo '</table>'
+}
+
+releases >_site/releases.html
