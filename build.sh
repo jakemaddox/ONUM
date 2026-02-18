@@ -1,4 +1,8 @@
 #!/bin/sh
+
+cp Cantarell-VF.woff2 _site/
+cp cantarell.css _site/
+
 echo '<!DOCTYPE html>'
 echo '<html>'
 cat head.html
