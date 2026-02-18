@@ -11,7 +11,7 @@ while IFS= read -r line; do
 		"# "*) echo -n "$line" | sed 's/## /<h1>/g' ; echo "</h1>" ;;
 		"Written by"*) echo -n '<span class="info">'; echo -n "$line"; echo "</span>" ;;
 		"=> Version"*) echo -n '<span class="info">'; echo -n "$line" | sed 's/=> /<a href="/' | sed 's/\t/">/'; echo "</a></span>" ;;
-		"=> "*) echo -n echo -n "$line" | sed 's/=> /<a href="/' | sed 's/\t/">/'; echo "</a></span>" ;;
+		"=> "*) echo -n "$line" | sed 's/=> /<a href="/' | sed 's/\t/">/'; echo "</a></span>" ;;
 		*) echo "$line"
 	esac
 done < index.gmi
