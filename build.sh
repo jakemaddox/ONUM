@@ -16,7 +16,7 @@ while IFS=read -r line; do
 		"=> "*) echo -n echo -n $line | sed 's/=> /<a href="/' | sed 's/\t/">/'; echo "</a></span>" ;;
 		*) [-z $line] && echo $line || echo "<p>$line</p>"
 	esac
-done < index.gmi > _site/index.html
+done < index.gmi
 
 echo '</body>'
 echo '</html>'
