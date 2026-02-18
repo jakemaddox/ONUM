@@ -79,8 +79,10 @@ releases() {
   lines=0
   while IFS= read -r line; do
     echo -e "\t<tr>"
-    test $lines -eq 0 && echo -e '\t\t' && echo "<th>$line</th>" | sed -e 's/\t/<\/th>\n<th>/g' ||
-      echo -e "\t\t" && echo "<td>$line</td>" | sed -e 's/\t/<\/td>\n<td>/g'
+    echo -n -e "\t\t"
+    [ $lines -eq 0 ] && echo "<th>$line</th>" | sed -e 's/\t/<\/th>\n\t\t<th>/g' ||
+      echo "<td>$line</td>" | sed -e 's/\t/<\/td>\n\t\t<td>/g'
+    echo -e "\t</tr>"
     lines=$((lines + 1))
   done <releases.tsv
   echo '</table>'
